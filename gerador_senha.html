@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝔊𝔢𝔯𝔞𝔡𝔬𝔯 𝔡𝔢 𝔰𝔢𝔫𝔥𝔞</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #9c3e3e;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>𝔊𝔢𝔯𝔞𝔡𝔬𝔯 𝔡𝔢 𝔰𝔢𝔫𝔥𝔞</h1>
+    <input type="text" id="senha" readonly>
+    <button onclick="gerarSenha()">Gerar Senha</button>
+    <button class="iniciar-btn">Iniciar</button>
+
+    <script>
+        function gerarSenha() {
+            const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
+            let senha = '';
+            const tamanho = 14; // Você pode mudar o tamanho da senha aqui
+
+            for (let i = 0; i < tamanho; i++) {
+                const indice = Math.floor(Math.random() * caracteres.length);
+                senha += caracteres[indice];
+            }
+
+            document.getElementById('senha').value = senha;
+        }
+      
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
